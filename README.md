@@ -12,6 +12,9 @@ Idea 2: generador de mundos narrativos.
 ## Hola
 
 Escrito por Andres.
+=======
+## Nota
 
+Agregada por guest.
 
 
