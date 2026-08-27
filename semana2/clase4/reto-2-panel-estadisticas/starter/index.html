@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Reto 2 - Panel de estadisticas (starter)</title>
+    <style>
+        body {
+            font-family: "Trebuchet MS", sans-serif;
+            background: #F7F6F2;
+            color: #28251D;
+            max-width: 640px;
+            margin: 50px auto;
+        }
+        h1 { color: #01696F; }
+        .contenedor {
+            display: flex;
+            gap: 24px;
+        }
+        .columna { flex: 1; }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        li {
+            background: white;
+            border: 1px solid #E0DED8;
+            padding: 12px 16px;
+            margin-bottom: 8px;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+        .completada {
+            text-decoration: line-through;
+            color: #7A7974;
+            background: #E6F2F1;
+        }
+        .panel {
+            background: #01696F;
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+        }
+        .panel p { margin: 6px 0; }
+        .panel strong { font-size: 1.3em; }
+    </style>
+</head>
+<body>
+    <h1>Panel de tareas</h1>
+    <div class="contenedor">
+        <div class="columna">
+            <ul id="lista-tareas"></ul>
+        </div>
+        <div class="columna panel">
+            <p>Total: <strong id="stat-total">-</strong></p>
+            <p>Completadas: <strong id="stat-completadas">-</strong></p>
+            <p>Pendientes: <strong id="stat-pendientes">-</strong></p>
+            <p>Avance: <strong id="stat-porcentaje">-</strong></p>
+            <p>Pendientes:</p>
+            <ul id="lista-pendientes"></ul>
+        </div>
+    </div>
+
+    <script>
+        // 1. Estado inicial: arreglo de objetos { texto, completada }
+        const tareas = [
+            { texto: "Comprar pan", completada: false },
+            { texto: "Estudiar JavaScript", completada: true },
+            { texto: "Hacer ejercicio", completada: false },
+            { texto: "Leer 10 páginas", completada: false },
+            { texto: "Practicar delegación de eventos", completada: false },
+            { texto: "Estudiar inglés", completada: false },
+            { texto: "Jugar fútbol", completada: false },
+        ];
+
+        const listaEl = document.querySelector("#lista-tareas");
+        const listaPendientesEl = document.querySelector("#lista-pendientes");
+        const statTotalEl = document.querySelector("#stat-total");
+        const statCompletadasEl = document.querySelector("#stat-completadas");
+        const statPendientesEl = document.querySelector("#stat-pendientes");
+        const statPorcentajeEl = document.querySelector("#stat-porcentaje");
+
+        // 2. TODO: Completa esta función.
+        // Debe usar filter(), reduce() y map() (no bucles for) para
+        // calcular: total, completadas, pendientes, porcentaje y
+        // un arreglo con los textos de las tareas pendientes.
+        function calcularEstadisticas() {
+            // Escribe tu solución aquí.
+            //filter: identificar tareas completadas y pendientes
+            const completadas = tareas.filter((tarea) => tarea.completada);
+            const pendientes = tareas.filter((tarea) => !tarea.completada);
+
+            const total = tareas.length;
+            const porcentaje = Math.round((completadas.length/total) * 100);
+
+            console.log("porcentaje calculado:",porcentaje);
+
+            return {
+                completadas: completadas,
+                pendientes: pendientes,
+                porcentaje: porcentaje
+            };
+        }
+
+        // 3. TODO: Completa esta función.
+        // Debe volver a dibujar la lista de tareas Y el panel de
+        // estadísticas a partir del arreglo "tareas".
+        function renderizarLista() {
+            // Escribe tu solución aquí.
+            //limpiar seccion
+            listaEl.innerHTML = "";
+
+            tareas.forEach((tarea, indice) => {
+                const li = document.createElement("li");
+                li.textContent = tarea.texto;
+
+                //guardar la posicion en el arreglo
+                //para que el listener pueda saber que tarea cambiar
+                li.dataset.indice = indice;
+
+                if (tarea.completada) {
+                    li.classList.add("completada");
+                }
+
+                //agregar <li> a la lista
+                listaEl.appendChild(li);
+            });
+        }
+
+        //funcion para renderizar todo
+        function renderizarTodo() {
+            renderizarLista();
+            renderizarEstadisticas();
+        }
+
+        //funcion para renderizar las estadisticas
+        function renderizarEstadisticas() {
+            const stats = calcularEstadisticas();
+
+            console.log(stats);
+
+            statCompletadasEl.textContent = stats.completadas.length;
+            statPendientesEl.textContent = stats.pendientes.length;
+            statTotalEl.textContent = tareas.length;
+            statPorcentajeEl.textContent = stats.porcentaje + "%";
+        }
+
+        //funcion para renderizar todos los elementos
+
+        // 4. TODO: Agrega UN SOLO addEventListener en listaEl
+        // usando delegación de eventos (event.target, dataset.indice).
+        listaEl.addEventListener("click", (event) => {
+            const elementoClick = event.target;
+
+            if (elementoClick.tagName === "LI") {
+                //Capturar el indice del elemento
+                const indice = Number(elementoClick.dataset.indice);
+                tareas[indice].completada = !tareas[indice].completada;
+
+                //Despues de cambiar el estado, es necesario volver a renderizar
+                renderizarTodo();
+            }
+        });
+
+        // 5. Llamada inicial para dibujar el estado inicial.
+        renderizarTodo();
+    </script>
+</body>
+</html>

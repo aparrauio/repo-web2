@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Reto 1 - Lista de tareas (starter)</title>
+    <style>
+        body {
+            font-family: "Trebuchet MS", sans-serif;
+            background: #F7F6F2;
+            color: #28251D;
+            max-width: 500px;
+            margin: 60px auto;
+        }
+        h1 { color: #01696F; }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        li {
+            background: white;
+            border: 1px solid #E0DED8;
+            padding: 14px 18px;
+            margin-bottom: 10px;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+        /* Completa esta clase: debe tachar el texto */
+        .tachado {
+            text-decoration: line-through;
+            color:darkgray;
+        }
+    </style>
+</head>
+<body>
+    <h1>Mis tareas</h1>
+    <ul id="lista-tareas">
+        <li>Comprar pan</li>
+        <li>Estudiar JavaScript</li>
+        <li>Hacer ejercicio</li>
+        <li>Leer 10 páginas</li>
+    </ul>
+
+    <script>
+        // 1. Selecciona el <ul>
+        const lista = document.querySelector("#lista-tareas");
+        const lista2 = document.getElementById("lista-tareas");
+
+        console.log(lista);
+        console.log(lista2);
+
+        // 2. Agrega UN SOLO addEventListener aquí (delegación de eventos)
+        // Pista: usa event.target para saber en qué <li> se hizo clic
+        // lista.addEventListener("click", (event) => {
+        //     ...
+        // });
+
+        lista.addEventListener("click", (event) => {
+            const elementoClick = event.target;
+
+            //verificar que el click se haya realizado en un <li>
+            if (elementoClick.tagName === "LI") {
+                elementoClick.classList.toggle("tachado");
+            }
+        });
+    </script>
+</body>
+</html>
