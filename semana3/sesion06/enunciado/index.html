@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Explorador de Países 🌍</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <main class="contenedor">
+    <h1>🌍 Explorador de Países</h1>
+    <p class="subtitulo">Escribe el nombre de un país y consulta sus datos en tiempo real.</p>
+    <p class="fuente-api">Datos provistos por <strong>countries.dev</strong> (API gratuita, sin registro).</p>
+
+    <!-- Formulario de búsqueda -->
+    <form id="form-busqueda" class="busqueda">
+      <input
+        type="text"
+        id="input-pais"
+        placeholder="Ej: ecuador, japan, chile..."
+        autocomplete="off"
+        required
+      />
+      <button type="submit" id="btn-buscar">Buscar</button>
+    </form>
+
+    <!-- Zona de resultados: aquí se muestran los 3 estados posibles -->
+    <section id="resultado" class="resultado">
+
+      <!-- Estado inicial: nada se ha buscado todavía -->
+      <p id="estado-inicial" class="mensaje">
+        👆 Escribe el nombre de un país para comenzar.
+      </p>
+
+      <!-- Estado de carga: se muestra MIENTRAS se espera la respuesta del API -->
+      <div id="estado-carga" class="mensaje oculto">
+        <div class="spinner"></div>
+        <p>Cargando información del país...</p>
+      </div>
+
+      <!-- Estado de error: se muestra si el país no existe o falla la conexión -->
+      <div id="estado-error" class="mensaje oculto">
+        <p id="texto-error">⚠️ No se pudo encontrar ese país.</p>
+        <button id="btn-reintentar" type="button">Reintentar</button>
+      </div>
+
+      <!-- Estado de éxito: la tarjeta con los datos del país -->
+      <article id="tarjeta-pais" class="tarjeta oculto">
+        <img id="bandera" class="bandera-img oculto" src="" alt="Bandera del país" />
+        <span id="bandera-emoji" class="bandera-emoji oculto"></span>
+        <div class="datos-pais">
+          <h2 id="nombre-pais"></h2>
+          <p><strong>Capital:</strong> <span id="capital"></span></p>
+          <p><strong>Población:</strong> <span id="poblacion"></span></p>
+          <p><strong>Región:</strong> <span id="region"></span></p>
+        </div>
+      </article>
+
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
