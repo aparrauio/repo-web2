@@ -1,0 +1,67 @@
+/* Mini Zoológico Interactivo — estilos base */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: #f5f3ef;
+  color: #28251d;
+  font-family: "Trebuchet MS", Arial, sans-serif;
+  padding: 2.5rem 1rem;
+}
+
+.zoologico {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.zoologico h1 {
+  text-align: center;
+  margin-bottom: 0.25rem;
+}
+
+.encabezado-total {
+  text-align: center;
+  color: #7a7974;
+  margin-bottom: 2rem;
+}
+
+.grid-animales {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1.25rem;
+}
+
+.tarjeta-animal {
+  background: white;
+  border: 1px solid #e3e0d8;
+  border-radius: 12px;
+  padding: 1.25rem;
+  text-align: center;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.tarjeta-animal .emoji {
+  font-size: 3rem;
+  margin: 0 0 0.5rem 0;
+}
+
+.tarjeta-animal h3 {
+  margin: 0 0 0.4rem 0;
+  color: #01696f;
+}
+
+.tarjeta-animal .sonido {
+  font-style: italic;
+  color: #4f98a3;
+  margin: 0 0 0.5rem 0;
+}
+
+.tarjeta-animal .dato {
+  font-size: 0.9rem;
+  color: #7a7974;
+  margin: 0;
+}
