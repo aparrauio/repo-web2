@@ -1,4 +1,4 @@
-# Pasos para publicar la app en GitHub Pages
+# Pasos para publicar la app en GitHub Pages - Desarrollo Web 2
 ## Parte 3 de la Sesión 8 — Guía para seguir en clase
 
 Esta guía asume que ya tienes tu proyecto de React funcionando localmente
