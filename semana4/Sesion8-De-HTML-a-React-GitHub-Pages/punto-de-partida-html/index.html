@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pepito Pérez · Consultor de Tecnología</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ================= HEADER + NAVEGACIÓN ================= -->
+  <header class="header">
+    <div class="contenedor header-inner">
+      <a href="#inicio" class="logo">⚡ Pepito Pérez</a>
+      <nav class="nav">
+        <a href="#inicio">Inicio</a>
+        <a href="#servicios">Servicios</a>
+        <a href="#trabajando">En qué estoy trabajando</a>
+        <a href="#testimonios">Testimonios</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ================= HERO ================= -->
+  <section id="inicio" class="hero">
+    <div class="contenedor hero-inner">
+      <h1>Convierto ideas en productos de software listos para escalar</h1>
+      <p class="hero-subtitulo">
+        Consultoría en arquitectura cloud, transformación digital y mentoría
+        técnica para equipos que quieren construir mejor y más rápido.
+      </p>
+      <a href="#contacto" class="boton boton-primario">Agenda una consultoría</a>
+    </div>
+  </section>
+
+  <!-- ================= SERVICIOS (contenido principal) ================= -->
+  <section id="servicios" class="servicios">
+    <div class="contenedor">
+      <h2>Servicios</h2>
+      <p class="seccion-subtitulo">Todo lo que necesitas para pasar de la idea al producto en producción.</p>
+
+      <div class="grid-servicios">
+        <div class="tarjeta-servicio">
+          <p class="icono">☁️</p>
+          <h3>Arquitectura Cloud</h3>
+          <p>Diseño de infraestructura escalable en AWS, Azure y GCP, pensada para crecer sin dolores de cabeza.</p>
+        </div>
+        <div class="tarjeta-servicio">
+          <p class="icono">🔄</p>
+          <h3>Transformación Digital</h3>
+          <p>Acompañamiento a equipos y empresas en la adopción de nuevas tecnologías y procesos ágiles.</p>
+        </div>
+        <div class="tarjeta-servicio">
+          <p class="icono">🎓</p>
+          <h3>Mentoría Técnica</h3>
+          <p>Sesiones 1:1 y talleres para desarrolladores que quieren subir de nivel más rápido.</p>
+        </div>
+        <div class="tarjeta-servicio">
+          <p class="icono">🔍</p>
+          <h3>Auditoría de Código</h3>
+          <p>Revisión profunda de tu base de código para detectar riesgos, deuda técnica y oportunidades de mejora.</p>
+        </div>
+      </div>
+
+      <div class="centrado">
+        <a href="#contacto" class="boton boton-secundario">Ver todos los servicios</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= EN QUÉ ESTOY TRABAJANDO (dinámico, vía GitHub API) ================= -->
+  <section id="trabajando" class="trabajando">
+    <div class="contenedor">
+      <h2>En qué estoy trabajando</h2>
+      <p class="seccion-subtitulo">Mis 5 repositorios más recientes en GitHub, actualizados en tiempo real.</p>
+
+      <div id="estado-repos" class="estado-repos">
+        <div class="spinner"></div>
+        <p>Cargando repositorios desde GitHub...</p>
+      </div>
+
+      <div id="lista-repos" class="grid-repos oculto"></div>
+
+      <div id="error-repos" class="error-repos oculto">
+        <p id="texto-error-repos">⚠️ No se pudieron cargar los repositorios.</p>
+        <button id="btn-reintentar-repos">Reintentar</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= TESTIMONIALES ================= -->
+  <section id="testimonios" class="testimonios">
+    <div class="contenedor">
+      <h2>Lo que dicen mis clientes</h2>
+
+      <div class="grid-testimonios">
+        <div class="tarjeta-testimonio">
+          <p class="testimonio-emoji">👩‍💼</p>
+          <p class="testimonio-texto">"Pepito reorganizó nuestra arquitectura cloud y redujo nuestros costos en un 40%."</p>
+          <p class="testimonio-nombre">María Fernanda Ruiz</p>
+          <p class="testimonio-cargo">CTO, Fintech Andina</p>
+        </div>
+        <div class="tarjeta-testimonio">
+          <p class="testimonio-emoji">👨‍💻</p>
+          <p class="testimonio-texto">"Sus sesiones de mentoría aceleraron el crecimiento técnico de todo mi equipo."</p>
+          <p class="testimonio-nombre">Carlos Benítez</p>
+          <p class="testimonio-cargo">Líder de Ingeniería, RetailPlus</p>
+        </div>
+        <div class="tarjeta-testimonio">
+          <p class="testimonio-emoji">👩‍🔬</p>
+          <p class="testimonio-texto">"La auditoría de código nos ahorró meses de deuda técnica que ni sabíamos que teníamos."</p>
+          <p class="testimonio-nombre">Lucía Torres</p>
+          <p class="testimonio-cargo">Fundadora, HealthTrack</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FOOTER ================= -->
+  <footer id="contacto" class="footer">
+    <div class="contenedor footer-inner">
+      <div>
+        <p class="footer-logo">⚡ Pepito Pérez</p>
+        <p>Consultor de Tecnología · Quito, Ecuador</p>
+      </div>
+      <div class="footer-contacto">
+        <p>📧 pepito@consultoria.dev</p>
+        <p>🔗 github.com/aparrauio</p>
+        <p>💼 linkedin.com/in/aparrauio</p>
+      </div>
+    </div>
+    <p class="footer-copy">© 2026 Pepito Pérez. Todos los derechos reservados.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

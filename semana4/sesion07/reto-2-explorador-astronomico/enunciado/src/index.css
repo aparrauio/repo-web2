@@ -1,0 +1,117 @@
+/* Explorador Astronómico de la NASA — estilos base */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: #0e1b1d;
+  color: #f5f3ef;
+  font-family: "Trebuchet MS", Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  padding: 2.5rem 1rem;
+}
+
+.app {
+  width: 100%;
+  max-width: 640px;
+  text-align: center;
+}
+
+h1 {
+  margin-bottom: 0.25rem;
+}
+
+.subtitulo {
+  color: #9ce6b8;
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  font-size: 0.9rem;
+}
+
+.selector-fecha {
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-bottom: 2rem;
+}
+
+.selector-fecha input {
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  border: 1px solid #2a3a3c;
+  background: #14232a;
+  color: #f5f3ef;
+  font-size: 1rem;
+}
+
+.tarjeta-apod {
+  background: #14232a;
+  border: 1px solid #2a3a3c;
+  border-radius: 12px;
+  padding: 1.5rem;
+  text-align: left;
+}
+
+.tarjeta-apod img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.tarjeta-apod h2 {
+  color: #4f98a3;
+  margin-top: 0;
+}
+
+.tarjeta-apod .fecha {
+  color: #7a7974;
+  font-size: 0.85rem;
+}
+
+.enlace-video {
+  display: inline-block;
+  margin-bottom: 1rem;
+  color: #9ce6b8;
+}
+
+.estado {
+  padding: 3rem 1rem;
+  color: #cdccca;
+}
+
+.spinner {
+  width: 42px;
+  height: 42px;
+  margin: 0 auto 1rem auto;
+  border: 4px solid #2a3a3c;
+  border-top-color: #4f98a3;
+  border-radius: 50%;
+  animation: girar 0.8s linear infinite;
+}
+
+@keyframes girar {
+  to { transform: rotate(360deg); }
+}
+
+.estado-error {
+  padding: 2rem 1rem;
+  background: #2a1414;
+  border: 1px solid #b3261e;
+  border-radius: 12px;
+  color: #f6d2cf;
+}
+
+.estado-error button {
+  margin-top: 1rem;
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 8px;
+  background: #b3261e;
+  color: white;
+  cursor: pointer;
+  font-size: 0.95rem;
+}
