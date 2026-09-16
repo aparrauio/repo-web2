@@ -1,0 +1,24 @@
+body {
+  background-color: #1b1f24;
+  min-height: 100vh;
+}
+
+.titulo-app {
+  color: #f5f3ef;
+}
+
+.tarjeta-personaje {
+  transition: transform 0.15s ease;
+}
+
+.tarjeta-personaje:hover {
+  transform: translateY(-4px);
+}
+
+.avatar-emoji {
+  font-size: 3rem;
+}
+
+.mas-fuerte {
+  border: 2px solid #ffc107 !important;
+}
