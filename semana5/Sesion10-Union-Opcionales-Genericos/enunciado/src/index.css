@@ -1,0 +1,47 @@
+body {
+  background-color: #1b1f24;
+  min-height: 100vh;
+}
+
+.titulo-app {
+  color: #f5f3ef;
+}
+
+.tarjeta-personaje {
+  transition: transform 0.15s ease;
+}
+
+.tarjeta-personaje:hover {
+  transform: translateY(-4px);
+}
+
+.avatar-emoji {
+  font-size: 3rem;
+}
+
+.mas-fuerte {
+  border: 2px solid #ffc107 !important;
+}
+
+.seccion-equipo {
+  background: #f8f9fa;
+  border-radius: 8px;
+  padding: 0.5rem 0.75rem;
+  margin-top: 0.75rem;
+  font-size: 0.85rem;
+}
+
+.buscador-universal {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.resultado-busqueda {
+  margin-top: 1rem;
+  padding: 1rem;
+  border-radius: 8px;
+  background: #e9f7f5;
+  border: 1px solid #01696f;
+}
