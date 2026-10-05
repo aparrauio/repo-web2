@@ -1,0 +1,96 @@
+body {
+  background-color: #0a0e17;
+  min-height: 100vh;
+  background-image: radial-gradient(circle at 20% 30%, #14213d 0%, #0a0e17 60%);
+}
+
+.titulo-app { color: #f5f3ef; }
+.subtitulo-app { color: #9ce6b8; }
+
+.tripulante-card {
+  transition: transform 0.15s ease;
+  background: #101826;
+  color: #f5f3ef;
+  border: 1px solid #22304a;
+}
+.tripulante-card:hover { transform: translateY(-4px); }
+
+.avatar-emoji { font-size: 3rem; }
+.avatar-emoji-grande { font-size: 6rem; }
+
+.progress { height: 22px; background-color: #1b2638; }
+.progress-bar { font-size: 0.75rem; font-weight: bold; }
+
+.formulario-tripulante {
+  background: #101826;
+  border: 1px solid #22304a;
+  border-radius: 12px;
+  padding: 2rem;
+  color: #f5f3ef;
+}
+.formulario-tripulante label { color: #cdccca; }
+
+.detalle-tripulante {
+  background: #101826;
+  border: 1px solid #22304a;
+  border-radius: 16px;
+  padding: 3rem;
+  color: #f5f3ef;
+}
+.detalle-seccion {
+  border-top: 1px solid #22304a;
+  padding-top: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.botones-tarjeta button, .botones-tarjeta a { font-size: 0.8rem; }
+
+.estado-pantalla {
+  min-height: 60vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #cdccca;
+  text-align: center;
+}
+
+.spinner-supabase {
+  width: 48px;
+  height: 48px;
+  margin-bottom: 1rem;
+  border: 4px solid #1b2638;
+  border-top-color: #3ecf8e;
+  border-radius: 50%;
+  animation: girar 0.8s linear infinite;
+}
+@keyframes girar { to { transform: rotate(360deg); } }
+
+.estado-error-pantalla {
+  background: #2a1414;
+  border: 1px solid #b3261e;
+  border-radius: 12px;
+  padding: 2rem;
+  color: #f6d2cf;
+  max-width: 500px;
+}
+.estado-error-pantalla button {
+  margin-top: 1rem;
+  padding: 0.5rem 1.2rem;
+  border: none;
+  border-radius: 8px;
+  background: #b3261e;
+  color: white;
+  cursor: pointer;
+}
+
+.badge-conexion {
+  display: inline-block;
+  background: #0f2e22;
+  color: #3ecf8e;
+  border: 1px solid #3ecf8e;
+  border-radius: 20px;
+  padding: 0.3rem 1rem;
+  font-size: 0.8rem;
+  margin-bottom: 1rem;
+}
